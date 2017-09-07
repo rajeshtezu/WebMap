@@ -24,7 +24,9 @@ for lt, ln, el in zip(lat, lon, elev):
     fill_color=color_producer(el), color='grey', fill_opacity=0.7))
 
 
-fgp = folium.FeatureGroup(name="Populations")    
+fgp = folium.FeatureGroup(name="Populations")
+
+# open world.json using context manager. because it should be automatically closed, or folium will raise error
 with open("world.json", "r", encoding="utf-8-sig") as f:
     fgp.add_child(folium.GeoJson(data=f.read(),
     style_function=lambda x: {'fillColor':'green' if x['properties']['POP2005'] < 10000000
