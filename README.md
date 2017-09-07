@@ -19,3 +19,5 @@ pip3 install -r requirements.txt
 ```
 python3 webmap.py
 ```
+
+Edit: GeoPy folder contains the code which fetch latitude-longitude coordinates of a given address. GeoPy folder is not being used in this project
